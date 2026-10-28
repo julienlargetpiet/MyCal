@@ -1,5 +1,7 @@
 # MyCal
 
+![logo](assets/logo.png)
+
 ## What is this ?
 
 MyCal is a lightweight, self-hosted web application for managing calendars, events, and files.

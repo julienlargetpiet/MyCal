@@ -569,4 +569,29 @@ h1::before {
 }
 
 
+html,
+body {
+    cursor: url("/assets/cursors/cursor.png") 1 1, auto;
+}
 
+a,
+button,
+.files-nav a,
+.file-item,
+.file-select,
+.file-select input[type="radio"],
+#create-directory-form button,
+#delete-selected {
+    cursor: url("/assets/cursors/cursor-hand.png") 12 3, pointer;
+}
+
+/* Text input cursor */
+#directory-name {
+    cursor: text;
+}
+
+/* Disabled buttons */
+button:disabled,
+#delete-selected:disabled {
+    cursor: not-allowed;
+}

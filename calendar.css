@@ -1322,5 +1322,38 @@ button, input, select, textarea { accent-color: var(--highlight); }
     *, *::before, *::after { transition: none !important; animation: none !important; }
 }
 
+html,
+body {
+    cursor: url("/assets/cursors/cursor.png") 1 1, auto;
+}
+
+/* Custom hand cursor */
+a,
+button,
+button.event-edit-button,
+button.event-details-button,
+button.event-dialog-close,
+.calendar-navigation button,
+.event-edit-actions button,
+input[type="submit"],
+input[type="button"],
+[role="button"],
+.btn,
+.files-button,
+#theme-toggle,
+#upload-button,
+#file-input,
+#file-input::file-selector-button,
+#upload-directory {
+    cursor: url("/assets/cursors/cursor-hand.png") 12 3, pointer;
+}
+
+/* Disabled controls */
+button:disabled,
+#upload-button:disabled,
+.calendar-navigation button:disabled,
+.event-edit-actions button:disabled {
+    cursor: not-allowed;
+}
 
 

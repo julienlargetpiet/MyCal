@@ -98,6 +98,7 @@ body {
   color: transparent;
   font-size: 0;
 }
+
 .brand-name {
   font-size: 29px;
   font-weight: 800;
@@ -172,6 +173,37 @@ button:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+
+
+html,
+body {
+    cursor: url("/assets/cursors/cursor.png") 1 1, auto;
+}
+
+input[type="text"],
+input[type="password"] {
+    cursor: text;
+}
+
+/* Custom hand cursor */
+a,
+button,
+.theme-toggle,
+.toggle,
+.submit,
+#theme-toggle,
+#toggle-password,
+#submit {
+    cursor: url("/assets/cursors/cursor-hand.png") 12 3, pointer;
+}
+
+/* Disabled submit button */
+.submit:disabled {
+    cursor: wait;
+}
+
+
 
   </style>
 </head>

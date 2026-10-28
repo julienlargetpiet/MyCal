@@ -1,7 +1,7 @@
 # MyCal
 
 <p align="center">
-<img src="assets/logo.jpg" alt="MyCal Logo" width="150">
+<img src="assets/logo.png" alt="MyCal Logo" width="150">
 </p>
 
 ## What is this ?

@@ -65,7 +65,7 @@ body {
     transform: translateY(-50%);
     width: 54px;
     height: 54px;
-    background: url("/assets/logo.jpg") center / contain no-repeat;
+    background: url("/assets/logo.png") center / contain no-repeat;
 }
 
 .calendar-eyebrow {
@@ -1178,7 +1178,7 @@ body {
 }
 .calendar-header::before {
     /* Keep the user's logo; image is provided by the MyCal installation. */
-    background-image: url("/assets/logo.jpg");
+    background-image: url("/assets/logo.png");
 }
 
 /* Solid offset shadows create depth without soft gradients */

@@ -1,0 +1,9 @@
+static/*
+!static/.gitkeep
+
+data_cal/*
+!data_cal/.gitkeep
+
+generated/*
+!generated/.gitkeep
+

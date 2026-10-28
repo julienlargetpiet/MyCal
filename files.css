@@ -380,3 +380,193 @@ h1 {
 }
 
 
+
+
+/* ================================================================
+   MyCal brutalist theme — matches calendar-brutalist.css
+   Layout, selectors and mobile behavior above remain intact.
+   ================================================================ */
+:root {
+    --background: #eae8e3;
+    --surface: #fffefa;
+    --border: #272522;
+    --text: #191817;
+    --muted: #5b5752;
+    --accent: #22201e;
+    --highlight: #b7473d;
+    --hover: #ece8e1;
+    --cell: #f5f3ee;
+    --depth: #272522;
+    --button-text: #fffefa;
+}
+
+:root[data-theme="dark"] {
+    --background: #141414;
+    --surface: #232220;
+    --border: #b4aaa0;
+    --text: #f3efe8;
+    --muted: #c0b8af;
+    --accent: #f3efe8;
+    --highlight: #d66b5f;
+    --hover: #38332f;
+    --cell: #2b2926;
+    --depth: #090909;
+    --button-text: #141414;
+}
+
+body {
+    font-family: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+/* Identical uppercase, high-contrast heading treatment. */
+h1 {
+    font-weight: 800;
+    letter-spacing: -0.055em;
+    text-transform: uppercase;
+    min-height: 54px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+h1::before {
+    content: "";
+    flex: 0 0 54px;
+    width: 54px;
+    height: 54px;
+    background: url("/assets/logo.jpg") center / contain no-repeat;
+}
+
+.eyebrow {
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+/* Square-edged panels with crisp offset shadows (no blur). */
+.files-list {
+    border: 2px solid var(--border);
+    border-radius: 0;
+    box-shadow: 7px 7px 0 var(--depth);
+}
+
+.files-actions {
+    border: 2px solid var(--border);
+    border-radius: 0;
+    box-shadow: 5px 5px 0 var(--depth);
+}
+
+.file-row,
+.file-item,
+.files-nav a,
+#create-directory-form input,
+.files-actions button {
+    border-radius: 0;
+}
+
+.file-item,
+.file-row {
+    transition: background-color 100ms linear;
+}
+
+.file-row:hover,
+.file-item:hover {
+    background: var(--hover);
+}
+
+.file-row:has(input:checked) {
+    background: var(--cell);
+    outline: 2px solid var(--highlight);
+    outline-offset: -2px;
+}
+
+.file-name {
+    font-weight: 650;
+}
+
+/* Raised, mechanical navigation and action buttons. */
+.files-nav a,
+.files-actions button {
+    border: 1px solid var(--border);
+    box-shadow: 3px 3px 0 var(--depth);
+    transition: background-color 100ms linear,
+                box-shadow 100ms linear,
+                transform 100ms linear;
+}
+
+.files-nav a {
+    background: var(--surface);
+    color: var(--accent);
+}
+
+.files-nav a:hover,
+.files-actions button:hover:not(:disabled) {
+    background: var(--hover);
+    color: var(--text);
+    opacity: 1;
+    box-shadow: 1px 1px 0 var(--depth);
+    transform: translate(2px, 2px);
+}
+
+.files-nav a:active,
+.files-actions button:active:not(:disabled) {
+    box-shadow: none;
+    transform: translate(3px, 3px);
+}
+
+#create-directory-form input {
+    background: var(--cell);
+    border: 1px solid var(--border);
+}
+
+.files-actions button {
+    background: var(--highlight);
+    color: #fff;
+}
+
+/* Destructive action remains clearly distinguished. */
+#delete-selected {
+    color: var(--highlight);
+    border: 1px solid var(--highlight);
+    background: var(--surface);
+}
+
+#delete-selected:hover:not(:disabled) {
+    background: var(--highlight);
+    border-color: var(--highlight);
+    color: #fff;
+}
+
+.file-select input {
+    accent-color: var(--highlight);
+}
+
+.files-nav a:focus-visible,
+.file-item:focus-visible,
+.files-actions button:focus-visible,
+.files-actions input:focus-visible,
+.file-select input:focus-visible {
+    outline: 2px solid var(--highlight);
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    h1::before {
+        flex-basis: 44px;
+        width: 44px;
+        height: 44px;
+    }
+    .files-list { box-shadow: 4px 4px 0 var(--depth); }
+    .files-actions { box-shadow: 3px 3px 0 var(--depth); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+
+

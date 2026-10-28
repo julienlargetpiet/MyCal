@@ -1786,7 +1786,7 @@ int main(void)
     if (!(mysql_real_connect(db,
                              "localhost",
                              "mycal",
-                             "mycal",
+                             "your-password",
                              "mycal",
                              0,
                              NULL,

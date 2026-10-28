@@ -1,0 +1,382 @@
+:root {
+    color-scheme: light;
+
+    --background: #eef2f8;
+    --surface: #ffffff;
+    --border: #e8edf4;
+    --text: #1e293b;
+    --muted: #8491a5;
+    --accent: #5865d8;
+    --hover: #edf2ff;
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+
+    --background: #101622;
+    --surface: #1a2232;
+    --border: #303d51;
+    --text: #e8eef8;
+    --muted: #9ba8bd;
+    --accent: #9ca8ff;
+    --hover: #2c3854;
+}
+
+/* Global */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 36px 20px;
+    min-height: 100vh;
+
+    background: var(--background);
+    color: var(--text);
+    font-family: Inter, system-ui, sans-serif;
+}
+
+/* Main container */
+
+.files-page {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Header */
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+h1 {
+    font-size: clamp(30px, 5vw, 44px);
+    margin: 8px 0 22px;
+    letter-spacing: -0.04em;
+}
+
+/* Navigation */
+
+.files-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.files-nav a {
+    padding: 10px 15px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: var(--surface);
+    color: var(--accent);
+
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 650;
+
+    transition: background 150ms ease;
+}
+
+.files-nav a:hover {
+    background: var(--hover);
+}
+
+/* File list */
+
+.files-list {
+    padding: 10px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    box-shadow: 0 10px 35px rgba(31, 45, 80, 0.06);
+}
+
+/* Individual files and folders */
+
+.file-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 14px 16px;
+    border-radius: 10px;
+
+    color: var(--text);
+    text-decoration: none;
+
+    transition: background 150ms ease;
+}
+
+.file-item:hover {
+    background: var(--hover);
+}
+
+.file-item:focus-visible,
+.files-nav a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* Icons */
+
+.file-icon {
+    font-size: 23px;
+    flex-shrink: 0;
+}
+
+/* Filenames */
+
+.file-name {
+    flex: 1;
+    min-width: 0;
+
+    overflow-wrap: anywhere;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* File sizes / folder labels */
+
+.file-meta {
+    color: var(--muted);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .files-list {
+        padding: 6px;
+        border-radius: 14px;
+    }
+
+    .file-item {
+        padding: 13px 10px;
+        gap: 10px;
+    }
+
+    .file-icon {
+        font-size: 20px;
+    }
+
+    .file-name {
+        font-size: 13px;
+    }
+
+    .file-meta {
+        font-size: 11px;
+    }
+
+    .files-nav a {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+}
+
+
+/* File management actions */
+
+.files-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 14px;
+
+    margin-bottom: 22px;
+    padding: 20px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    box-shadow: 0 10px 35px rgba(31, 45, 80, 0.04);
+}
+
+/* Create directory form */
+
+#create-directory-form {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+#create-directory-form label {
+    width: 100%;
+
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 650;
+}
+
+#create-directory-form input {
+    flex: 1;
+    min-width: 150px;
+
+    padding: 11px 13px;
+
+    background: var(--background);
+    color: var(--text);
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    font: inherit;
+    font-size: 13px;
+}
+
+#create-directory-form input::placeholder {
+    color: var(--muted);
+}
+
+/* Buttons */
+
+.files-actions button {
+    padding: 11px 16px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: var(--accent);
+    color: var(--surface);
+
+    font: inherit;
+    font-size: 13px;
+    font-weight: 650;
+
+    cursor: pointer;
+    transition: opacity 150ms ease, background 150ms ease;
+}
+
+.files-actions button:hover:not(:disabled) {
+    opacity: 0.85;
+}
+
+#delete-selected {
+    background: transparent;
+    color: #dc5b65;
+    border-color: #dc5b65;
+}
+
+#delete-selected:hover:not(:disabled) {
+    background: rgba(220, 91, 101, 0.08);
+}
+
+.files-actions button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Operation status */
+
+#files-message {
+    width: 100%;
+    margin: 0;
+
+    color: var(--muted);
+    font-size: 13px;
+}
+
+#files-message:empty {
+    display: none;
+}
+
+/* File rows with selection */
+
+.file-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    border-radius: 10px;
+}
+
+.file-row:hover {
+    background: var(--hover);
+}
+
+.file-row .file-item {
+    flex: 1;
+    min-width: 0;
+}
+
+.file-select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 6px 12px 14px;
+    cursor: pointer;
+}
+
+.file-select input {
+    width: 17px;
+    height: 17px;
+    margin: 0;
+
+    accent-color: var(--accent);
+    cursor: pointer;
+}
+
+.file-row:has(input:checked) {
+    background: var(--hover);
+}
+
+/* Keyboard navigation */
+
+.files-actions button:focus-visible,
+.files-actions input:focus-visible,
+.file-select input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* Mobile file management */
+
+@media (max-width: 600px) {
+    .files-actions {
+        padding: 14px;
+        gap: 12px;
+    }
+
+    #create-directory-form {
+        flex-basis: 100%;
+    }
+
+    #create-directory-form input {
+        min-width: 0;
+    }
+
+    .files-actions button {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .file-select {
+        padding: 10px 4px 10px 8px;
+    }
+
+    .file-select input {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+

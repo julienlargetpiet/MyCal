@@ -1,6 +1,8 @@
 # MyCal
 
+<center>
 <img src="assets/logo.png" alt="MyCal Logo" width="150">
+</center>
 
 ## What is this ?
 

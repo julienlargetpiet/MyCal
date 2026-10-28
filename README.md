@@ -1,5 +1,13 @@
 # MyCal
 
+## What is this ?
+
+MyCal is a lightweight, self-hosted web application for managing calendars, events, and files.
+
+It features a custom HTTP server written in C, CSV-based event storage, file management, and user authentication backed by MariaDB and C.
+
+Nginx handles HTTPS, static file serving, and reverse proxying.
+
 ## Configuration
 
 First, we'll download Nginx (if that's not already done).

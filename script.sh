@@ -1,8 +1,13 @@
 #!/bin/bash
 
 USR="username"
+DOMAIN="domain-name"
 
 set -e
+
+sed "s|YOUR_DOMAIN|$DOMAIN|g" mycal.conf
+
+mv mycal.conf /etc/nginx/sites-available/.
 
 cd /var/www/MyCal
 
